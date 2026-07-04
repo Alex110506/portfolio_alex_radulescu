@@ -56,7 +56,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-28 px-6 relative overflow-hidden">
+    <section id="experience" className="pt-8 pb-24 md:py-28 px-4 md:px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto w-full">
         {/* Section heading */}
         <motion.div
@@ -64,7 +64,7 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 md:mb-16"
         >
           <p className="text-blue-400 text-sm font-medium tracking-wider uppercase mb-3">
             Career
@@ -87,7 +87,7 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="relative pl-20 group"
+                className="relative pl-14 md:pl-20 group"
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-[12px] top-6 z-10 flex items-center justify-center w-8 h-8 rounded-full border-2 border-zinc-700 bg-zinc-950 group-hover:border-blue-500 group-hover:bg-blue-500/10 transition-all duration-500 shadow-lg shadow-black">
@@ -97,7 +97,7 @@ const Experience = () => {
                 </div>
 
                 {/* Experience Card */}
-                <div className="relative bg-zinc-900/50 backdrop-blur-md border border-zinc-800/60 rounded-2xl p-6 hover:translate-x-1 transition-all duration-500 shadow-lg shadow-black/20 overflow-hidden">
+                <div className="relative bg-zinc-900/50 backdrop-blur-md border border-zinc-800/60 rounded-2xl p-5 md:p-6 hover:translate-x-1 transition-all duration-500 shadow-lg shadow-black/20 overflow-hidden">
                   {/* Glowing left border indicator */}
                   <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-400 via-blue-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

@@ -69,8 +69,9 @@ const Hero = () => {
       </div>
 
       {/* ── Main Content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-32 lg:py-0">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+      {/* Changed py-32 to pt-32 pb-12 to drastically reduce bottom gap on mobile */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-32 pb-12 lg:py-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
           {/* ── Left Side: Text Content ── */}
           <motion.div
@@ -118,18 +119,19 @@ const Hero = () => {
           </motion.div>
 
           {/* ── Right Side: Floating Layout ── */}
+          {/* Increased container height slightly on mobile to accommodate larger image */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-full lg:w-[45%] flex justify-center lg:justify-end relative h-[350px] sm:h-[400px] lg:h-[600px] perspective-[1200px]"
+            className="w-full lg:w-[45%] flex justify-center lg:justify-end relative h-[400px] sm:h-[450px] lg:h-[600px] perspective-[1200px]"
           >
             {/* Background floating card (decorative) */}
-            <div className="absolute top-[5%] md:top-[10%] left-1/2 md:left-auto md:right-[20%] ml-[-130px] sm:ml-[-160px] md:ml-0 z-0">
+            <div className="absolute top-[5%] md:top-[10%] left-1/2 md:left-auto md:right-[20%] ml-[-140px] sm:ml-[-160px] md:ml-0 z-0">
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-2xl transform rotate-y-[-20deg] rotate-x-[10deg] rotate-z-[5deg]"
+                className="w-56 h-72 sm:w-64 sm:h-80 md:w-64 md:h-80 bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-2xl transform rotate-y-[-20deg] rotate-x-[10deg] rotate-z-[5deg]"
               >
                 <div className="p-4 flex flex-col gap-3">
                   <div className="w-1/2 h-3 sm:h-4 bg-slate-700/50 rounded"></div>
@@ -140,11 +142,11 @@ const Hero = () => {
             </div>
 
             {/* Foreground floating card (Profile Picture) */}
-            <div className="absolute top-[15%] md:top-[25%] left-1/2 md:left-auto md:right-[-5%] ml-[-60px] sm:ml-[-90px] md:ml-0 z-10">
+            <div className="absolute top-[15%] md:top-[25%] left-1/2 md:left-auto md:right-[-5%] ml-[-90px] md:ml-0 z-10">
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="w-56 h-72 sm:w-72 sm:h-80 md:w-80 md:h-[22rem] bg-[#0A0A0B] border-2 border-slate-700/60 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform rotate-y-[-15deg] rotate-x-[5deg] -rotate-z-[2deg] overflow-hidden group"
+                className="w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-[22rem] bg-[#0A0A0B] border-2 border-slate-700/60 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform rotate-y-[-15deg] rotate-x-[5deg] -rotate-z-[2deg] overflow-hidden group"
               >
                 {/* Image Frame Wrapper */}
                 <div className="relative w-full h-full">
