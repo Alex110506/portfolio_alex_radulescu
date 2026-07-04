@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import profilePic from "../assets/IMG_3547.jpg";
 
+// ── Import all background ribbon images ──
+import chessPic from "../assets/chess.jpeg";
+import gymPic from "../assets/gym.jpeg";
+import vibePic from "../assets/vibe.jpeg";
+import mascoPic from "../assets/masco.png";
+import interroPic from "../assets/interro.png";
+import jadePic from "../assets/jade.jpeg";
+
 const container = {
   hidden: {},
   show: {
@@ -15,16 +23,16 @@ const item = {
 
 // ── Left Background Ribbon Images ──
 const rightBgCol1 = [
-  "src/assets/chess.jpeg", // Paste image URL here
-  "src/assets/gym.jpeg", // Paste image URL here
-  "src/assets/vibe.jpeg", // Paste image URL here
+  chessPic, 
+  gymPic, 
+  vibePic, 
 ];
 
 const rightBgCol2 = [
-  "src/assets/vibe.jpeg", // Paste image URL here
-  "src/assets/masco.png", // Paste image URL here
-  "src/assets/interro.png", // Paste image URL here
-  "src/assets/jade.jpeg", // Paste image URL here
+  vibePic, 
+  mascoPic, 
+  interroPic, 
+  jadePic, 
 ];
 
 const Hero = () => {
@@ -69,7 +77,7 @@ const Hero = () => {
             variants={container}
             initial="hidden"
             animate="show"
-            className="flex flex-col items-center text-center md:items-start md:text-left gap-5 w-full lg:w-[55%] z-20 md:pl-12 lg:pl-20"
+            className="flex flex-col items-start text-left gap-5 w-full lg:w-[55%] z-20 md:pl-12 lg:pl-20"
           >
             {/* Intro */}
             <motion.div variants={item}>
@@ -79,7 +87,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Name & Title */}
-            <motion.div variants={item} className="flex flex-col items-center md:items-start gap-2">
+            <motion.div variants={item} className="flex flex-col items-start gap-2">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
                 [Alex Rădulescu]
               </h1>
