@@ -69,7 +69,7 @@ const Hero = () => {
             variants={container}
             initial="hidden"
             animate="show"
-            className="flex flex-col items-start text-left gap-5 w-full lg:w-[55%] z-20 md:pl-12 lg:pl-20"
+            className="flex flex-col items-center text-center md:items-start md:text-left gap-5 w-full lg:w-[55%] z-20 md:pl-12 lg:pl-20"
           >
             {/* Intro */}
             <motion.div variants={item}>
@@ -79,7 +79,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Name & Title */}
-            <motion.div variants={item} className="flex flex-col items-start gap-2">
+            <motion.div variants={item} className="flex flex-col items-center md:items-start gap-2">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
                 [Alex Rădulescu]
               </h1>
