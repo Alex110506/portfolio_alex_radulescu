@@ -40,7 +40,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#0a0f1c] to-[#0A0A0B]">
 
       {/* ── Diagonal Image Strips (Right Background) ── */}
-      <div className="absolute top-[-17%] right-[-30%] md:right-[4%] w-[300px] md:w-[400px] h-[150%] transform -rotate-[20deg] flex gap-4 opacity-40 md:opacity-60 z-0 pointer-events-none">
+      <div className="absolute top-[-17%] right-[-50%] md:right-[4%] w-[300px] md:w-[400px] h-[150%] transform -rotate-[20deg] flex gap-4 opacity-40 md:opacity-60 z-0 pointer-events-none">
         {/* Column 1 */}
         <div className="flex flex-col gap-4 w-1/2 pt-12 animate-marquee-slow">
           {rightBgCol1.map((src, idx) => (
@@ -69,26 +69,27 @@ const Hero = () => {
       </div>
 
       {/* ── Main Content ── */}
-      {/* Changed py-32 to pt-32 pb-12 to drastically reduce bottom gap on mobile */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-32 pb-12 lg:py-0">
+      {/* Changed pt-32 to pt-24 md:pt-32 to push text higher on mobile */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-24 pb-12 md:pt-32 lg:py-0">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
           {/* ── Left Side: Text Content ── */}
+          {/* Tightened gap from gap-5 to gap-4 to condense vertical space slightly */}
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="flex flex-col items-start text-left gap-5 w-full lg:w-[55%] z-20 md:pl-12 lg:pl-20"
+            className="flex flex-col items-start text-left gap-4 w-full lg:w-[55%] z-20 md:pl-12 lg:pl-20"
           >
             {/* Intro */}
             <motion.div variants={item}>
-              <p className="text-zinc-100 font-bold tracking-widest uppercase text-sm md:text-base mb-2">
+              <p className="text-zinc-100 font-bold tracking-widest uppercase text-sm md:text-base mb-1 md:mb-2">
                 Hi, My Name Is
               </p>
             </motion.div>
 
             {/* Name & Title */}
-            <motion.div variants={item} className="flex flex-col items-start gap-2">
+            <motion.div variants={item} className="flex flex-col items-start gap-1 md:gap-2">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
                 [Alex Rădulescu]
               </h1>
@@ -98,8 +99,8 @@ const Hero = () => {
             </motion.div>
 
             {/* Description */}
-            <motion.div variants={item} className="mt-4 max-w-xl mx-auto md:mx-0">
-              <p className="text-zinc-100 font-semibold text-lg lg:text-xl mb-2">
+            <motion.div variants={item} className="mt-2 md:mt-4 max-w-xl mx-auto md:mx-0">
+              <p className="text-zinc-100 font-semibold text-lg lg:text-xl mb-1 md:mb-2">
                 Building scalable systems and autonomous AI in the <span className="text-[#00b4d8]">Tech industry</span>!
               </p>
               <p className="text-zinc-400 text-base lg:text-lg leading-relaxed">
@@ -108,7 +109,7 @@ const Hero = () => {
             </motion.div>
 
             {/* CTA Button */}
-            <motion.div variants={item} className="mt-6">
+            <motion.div variants={item} className="mt-4 md:mt-6">
               <a
                 href="#work"
                 className="inline-flex items-center justify-center gap-2 bg-[#00b4d8] hover:bg-[#0096b4] text-white px-8 py-3.5 rounded-md font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,180,216,0.4)] hover:shadow-[0_0_30px_rgba(0,180,216,0.6)] hover:-translate-y-1 mx-auto md:mx-0"
@@ -119,7 +120,6 @@ const Hero = () => {
           </motion.div>
 
           {/* ── Right Side: Floating Layout ── */}
-          {/* Increased container height slightly on mobile to accommodate larger image */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
