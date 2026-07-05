@@ -23,7 +23,7 @@ const item = {
 
 // ── Left Background Ribbon Images ──
 const rightBgCol1 = [
-  chessPic, 
+  jadePic,
   gymPic, 
   vibePic, 
 ];
@@ -32,12 +32,12 @@ const rightBgCol2 = [
   vibePic, 
   mascoPic, 
   interroPic, 
-  jadePic, 
+  chessPic 
 ];
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#0a0f1c] to-[#0A0A0B]">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#0a0f1c] to-[#09090B]">
 
       {/* ── Diagonal Image Strips (Right Background) ── */}
       <div className="absolute top-[-17%] right-[-50%] md:right-[4%] w-[300px] md:w-[400px] h-[150%] transform -rotate-[20deg] flex gap-4 opacity-40 md:opacity-60 z-0 pointer-events-none">
@@ -83,17 +83,17 @@ const Hero = () => {
           >
             {/* Intro */}
             <motion.div variants={item}>
-              <p className="text-zinc-100 font-bold tracking-widest uppercase text-sm md:text-base mb-1 md:mb-2">
+              <p className="text-zinc-300 font-bold tracking-widest uppercase text-sm md:text-base mb-1 md:mb-2">
                 Hi, My Name Is
               </p>
             </motion.div>
 
             {/* Name & Title */}
             <motion.div variants={item} className="flex flex-col items-start gap-1 md:gap-2">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
-                [Alex Rădulescu]
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                [Alex&nbsp;Rădulescu]
               </h1>
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#00b4d8]">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#409cff]">
                 I am a Software<br />Engineer
               </h2>
             </motion.div>
@@ -101,7 +101,7 @@ const Hero = () => {
             {/* Description */}
             <motion.div variants={item} className="mt-2 md:mt-4 max-w-xl mx-auto md:mx-0">
               <p className="text-zinc-100 font-semibold text-lg lg:text-xl mb-1 md:mb-2">
-                Building scalable systems and autonomous AI in the <span className="text-[#00b4d8]">Tech industry</span>!
+                Building scalable systems and autonomous AI in the <span className="text-[#409cff]">Tech industry</span>!
               </p>
               <p className="text-zinc-400 text-base lg:text-lg leading-relaxed">
                 I am a product-oriented Software Engineer with a focus on high-level system architecture, from designing robust backends to bringing production-ready solutions to life!
@@ -112,9 +112,9 @@ const Hero = () => {
             <motion.div variants={item} className="mt-4 md:mt-6">
               <a
                 href="#work"
-                className="inline-flex items-center justify-center gap-2 bg-[#00b4d8] hover:bg-[#0096b4] text-white px-8 py-3.5 rounded-md font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,180,216,0.4)] hover:shadow-[0_0_30px_rgba(0,180,216,0.6)] hover:-translate-y-1 mx-auto md:mx-0"
+                className="inline-flex items-center justify-center gap-2 bg-[#409cff] hover:bg-[#5aa7fa] text-white px-8 py-3.5 rounded-md font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,180,216,0.4)] hover:shadow-[0_0_30px_rgba(0,180,216,0.6)] hover:-translate-y-1 mx-auto md:mx-0"
               >
-                🚀 Lets Get Started!
+                Lets Get Started!
               </a>
             </motion.div>
           </motion.div>
