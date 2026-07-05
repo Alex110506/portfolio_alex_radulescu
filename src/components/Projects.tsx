@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ImportIcon } from "lucide-react";
+import { ExternalLink} from "lucide-react";
 import msaco from "../assets/masco2.png"
 import jade from "../assets/jade2.png"
 import interro from "../assets/interro.png"
