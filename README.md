@@ -1,75 +1,30 @@
-# React + TypeScript + Vite
+# Alexandru Rădulescu — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Neo-brutalist single-page portfolio built with React 19, TypeScript, Tailwind CSS v4 and Vite.
 
-Currently, two official plugins are available:
+## Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```sh
+npm install
+npm run dev      # local dev server
+npm run build    # type-check + production build into dist/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Add your images
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Static files are served from `public/`. Drop these in with these exact names:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| File | Used for |
+| --- | --- |
+| `public/assets/alex.jpg` | Hero portrait |
+| `public/assets/itecify-1.jpeg`, `public/assets/itecify-2.png` | iTECify case study |
+| `public/assets/interro.png` | InterroAI case study |
+| `public/assets/jade-1.jpeg`, `public/assets/jade-2.jpeg` | Jade Intimo case study |
+| `public/assets/masco-1.png`, `public/assets/masco-2.png` | Masco Baits case study |
+| `public/uploads/cv-alex-radulescu.pdf` | "Download CV" button + terminal `cv` command |
 
-```
+## Where things live
+
+- All copy (jobs, case studies, skills, awards, contact links) — `src/data/content.ts`
+- Interactive terminal commands — `src/components/Terminal.tsx`
+- Theme knobs (accent color `--acc`, hero photo duotone `--pf`/`--po`, ticker speed `--mspd`) — CSS variables on `:root` in `src/index.css`

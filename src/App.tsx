@@ -1,23 +1,33 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
+import Nav from './components/Nav'
+import Hero from './components/Hero'
+import Ticker from './components/Ticker'
+import About from './components/About'
+import Experience from './components/Experience'
+import CaseStudies from './components/CaseStudies'
+import Skills from './components/Skills'
+import Awards from './components/Awards'
+import Terminal from './components/Terminal'
+import Footer from './components/Footer'
+import { useReveal } from './hooks/useReveal'
 
-function App() {
+export default function App() {
+  useReveal()
+
   return (
-    <main className="bg-zinc-950 text-zinc-400 font-sans min-h-screen selection:bg-blue-500/20 selection:text-blue-200">
-      <Navbar />
-      <Hero />
-      <div className="flex justify-center w-full">
+    <>
+      <Nav />
+      <div className="h-[55px]" />
+      <main>
+        <Hero />
+        <Ticker />
+        <About />
         <Experience />
-      </div>
-      <Projects />
-      <Skills />
-      <Contact />
-    </main>
-  );
+        <CaseStudies />
+        <Skills />
+        <Awards />
+        <Terminal />
+      </main>
+      <Footer />
+    </>
+  )
 }
-
-export default App;
