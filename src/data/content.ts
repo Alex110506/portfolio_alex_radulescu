@@ -53,6 +53,16 @@ export const jobs: Job[] = [
   },
   {
     num: '02',
+    role: 'Full-Stack Developer',
+    company: 'Parohia Ortodoxă Română Sântana I (freelance)',
+    dates: '07/2026 — 07/2026',
+    points: [
+      'Shipped a parish website with a custom CMS as three decoupled Dockerized services — React (Vite, Tailwind CSS), FastAPI content API, Python calendar scraper - hosted on Railway with managed MongoDB and Redis over private networking.',
+      'Architected a Redis-first read path with MongoDB fallback and write-through saves; secured the admin dashboard with httpOnly-cookie JWT auth (bcrypt), Redis-backed per-IP rate limiting and async gallery uploads to Cloudflare R2.',
+    ],
+  },
+  {
+    num: '03',
     role: 'AI & ML Trainee',
     company: 'Bitdefender × LigaAC Labs',
     dates: '04/2026 — 06/2026',
@@ -63,8 +73,8 @@ export const jobs: Job[] = [
     ],
   },
   {
-    num: '03',
-    role: 'Full-Stack Dev & DevOps',
+    num: '04',
+    role: 'Full-Stack Developer',
     company: 'Jade Intimo — Rus S Anca PFA (freelance)',
     dates: '12/2025 — 02/2026',
     points: [
@@ -74,7 +84,7 @@ export const jobs: Job[] = [
     ],
   },
   {
-    num: '04',
+    num: '05',
     role: 'Full-Stack Developer',
     company: 'Masco-Baits S.R.L. (freelance)',
     dates: '05/2025 — 08/2025',
@@ -120,6 +130,20 @@ export const projects: Project[] = [
     result: 'Private, offline AI over your own files — agents that catch and fix their own errors autonomously.',
     stack: ['React', 'Electron', 'FastAPI', 'ChromaDB', 'RAG', 'TF-IDF', 'scikit-learn', 'pytest'],
     images: ['/assets/interro.png'],
+  },
+  {
+    name: 'Parohia Sântana I',
+    sub: 'Parish website & lightweight CMS',
+    badge: 'FREELANCE · LIVE IN PRODUCTION',
+    link: 'https://parohia-santana-1.ro/',
+    problem:
+      'A local church from my city needed one platform to unify its calendar and events so the community can see them, share the parish’s history and information, offer contact details, and welcome newcomers.',
+    solution:
+      'Three decoupled Dockerized services on Railway: a React (Vite, Tailwind CSS) one-page site with a hidden admin dashboard, a FastAPI CMS API with httpOnly-cookie JWT auth and Redis-backed rate limiting, and a monthly Python scraper that keeps the Orthodox feast calendar fresh. Redis-first reads with MongoDB fallback, write-through saves, gallery uploads to Cloudflare R2.',
+    result:
+      'Live at parohia-santana-1.ro — the parish edits every section itself and the feast calendar updates automatically every month.',
+    stack: ['React 19', 'Vite', 'Tailwind CSS', 'FastAPI', 'MongoDB', 'Redis', 'Cloudflare R2', 'BeautifulSoup', 'Docker', 'Railway'],
+    images: ['/assets/church-1.png', '/assets/church-2.png'],
   },
   {
     name: 'Jade Intimo',
