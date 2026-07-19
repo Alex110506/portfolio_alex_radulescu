@@ -3,7 +3,7 @@ import { contact } from '../data/content'
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b-[3px] border-ink">
-      <div className="grid min-h-[78vh] grid-cols-2 lg:grid-cols-[1fr_480px]">
+      <div className="grid grid-cols-1 lg:min-h-[78vh] lg:grid-cols-[1fr_480px]">
         <div className="flex flex-col justify-between border-ink pb-8 pl-8 pr-5 pt-12 lg:border-r-[3px]">
           <div>
             <div className="mb-5 flex flex-wrap items-center gap-3">
