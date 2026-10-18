@@ -124,11 +124,11 @@ export const projects: Project[] = [
     name: 'InterroAI',
     sub: 'Local multi-agent desktop platform',
     badge: 'BITDEFENDER CAPSTONE',
-    problem: 'Your files hold answers, but cloud AI tools mean shipping private data off-device.',
+    problem: 'Cloud AI coding assistants typically require uploading entire codebases off-device, while local setups risk exposing platform API keys and lack scalable indexing.',
     solution:
-      'Fully local desktop app (React, Electron, FastAPI, ChromaDB) with RAG-based semantic file indexing, offline intent classification (TF-IDF + Logistic Regression) and a self-correcting Plan → Code → Verify agent loop running sandboxed pytest.',
-    result: 'Private, offline AI over your own files — agents that catch and fix their own errors autonomously.',
-    stack: ['React', 'Electron', 'FastAPI', 'ChromaDB', 'RAG', 'TF-IDF', 'scikit-learn', 'pytest'],
+      'Hybrid desktop-cloud architecture pairing an Electron/React UI and local Python/FastAPI runtime with Azure Container Apps. Features incremental, AST-aware indexing over Azure Service Bus and PostgreSQL (⁠pgvector⁠) that stores only vector hashes and line ranges—keeping raw source code strictly on the local disk. Implements intent classification and a sandboxed Plan ➔ Code ➔ Verify loop with autonomous multi-round self-correction via ⁠ruff⁠ and ⁠pytest.',
+    result: 'Private, local-first code modification — autonomous agent workflows running directly on disk without exposing source code to cloud indexes or leaking model keys.',
+    stack: ['React', 'Electron', 'FastAPI', 'PostgreSQL', 'RAG', 'Message Queues'],
     images: ['/assets/interro.png'],
   },
   {
