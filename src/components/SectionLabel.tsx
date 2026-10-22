@@ -7,10 +7,11 @@ interface SectionLabelProps {
   lines: string[]
 }
 
+// Rendered as the section's h2 so screen-reader heading navigation sees every section.
 export default function SectionLabel({ sticky = false, lines }: SectionLabelProps) {
   return (
-    <div
-      className={`sticky top-[49px] z-40 border-b-[1.5px] border-ink bg-cream px-5 py-2.5 font-display text-[16px] uppercase lg:border-b-0 lg:border-r-[3px] lg:px-8 lg:py-7 lg:text-[28px] ${
+    <h2
+      className={`sticky top-[56px] z-40 border-b-[1.5px] border-ink bg-cream px-5 py-2 font-display text-[16px] uppercase lg:border-b-0 lg:border-r-[3px] lg:px-8 lg:py-7 lg:text-[28px] ${
         sticky ? 'lg:self-start' : 'lg:static'
       }`}
     >
@@ -24,6 +25,6 @@ export default function SectionLabel({ sticky = false, lines }: SectionLabelProp
           {line}
         </Fragment>
       ))}
-    </div>
+    </h2>
   )
 }

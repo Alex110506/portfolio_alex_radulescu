@@ -4,6 +4,7 @@
   --color-cream: #f2efe7;
   --color-ink: #111111;
   --color-accent: var(--acc, #ff2e00);
+  --color-accent-deep: var(--acc-deep, #c22000);
 
   --font-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: "Archivo Black", "Archivo", Helvetica, Arial, sans-serif;
@@ -12,29 +13,39 @@
 
 /*
  * Theme knobs (the design's editable props):
- *   --acc        accent color (#FF2E00 · #0031F5 · #0E8A4A · #111111)
- *   --pf / --po  hero photo filter + accent overlay opacity
- *                  duotone: grayscale(1) contrast(1.1) / 0.55
- *                  mono:    grayscale(1) contrast(1.1) / 0
- *                  color:   none / 0
- *   --mspd       ticker marquee duration
+ *   --acc       accent color (#FF2E00 · #0031F5 · #0E8A4A · #111111)
+ *               Use it for display type, fills and rules. On cream it is only
+ *               3.2:1, so small text uses --acc-deep instead.
+ *   --acc-deep  darker accent for small text on cream and for fills behind
+ *               white text (#c22000: 5.2:1 on cream, 6:1 under white).
+ *               Retune it whenever --acc changes.
  */
 :root {
   --acc: #ff2e00;
-  --pf: grayscale(1) contrast(1.1);
-  --po: 0.55;
-  --mspd: 36s;
+  --acc-deep: #c22000;
 }
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    color-scheme: light;
+    /* Anchor jumps land below the 56px fixed header. */
+    scroll-padding-top: 56px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
   body {
     @apply bg-cream font-sans text-ink antialiased;
+    caret-color: var(--acc, #ff2e00);
   }
   a:hover {
-    color: var(--acc, #ff2e00);
+    color: var(--acc-deep, #c22000);
+  }
+  :focus-visible {
+    outline: 3px solid var(--acc, #ff2e00);
+    outline-offset: 3px;
   }
   ::selection {
     background: var(--acc, #ff2e00);
@@ -42,14 +53,6 @@
   }
 }
 
-@keyframes marq {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 @keyframes blink {
   0%,
   49% {
@@ -61,9 +64,6 @@
   }
 }
 
-.animate-marquee {
-  animation: marq var(--mspd, 36s) linear infinite;
-}
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
@@ -84,7 +84,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-blink {
     animation: none;
   }
 }

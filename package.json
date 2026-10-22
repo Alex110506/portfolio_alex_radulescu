@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "images": "sh scripts/optimize-screenshots.sh",
     "preview": "vite preview"
   },
   "dependencies": {
